@@ -5,11 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=cakraocha/udacity-devops-proj5
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
+echo "Docker ID and Image: $dockerpath tag: $tag"
+docker login
+docker image tag api:latest $dockerpath
 
 # Step 3:
 # Push image to a docker repository
+docker image push $dockerpath
